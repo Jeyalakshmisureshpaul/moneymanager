@@ -1,1 +1,1 @@
-export const API = "https://me-expense-tracker.herokuapp.com";
+export const API = "https://moneymanager-back.herokuapp.com";
