@@ -11,7 +11,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import { useHistory } from "react-router-dom";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route,BrowserRouter as Router } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -134,8 +134,9 @@ function App() {
               </Button>
             </Toolbar>
           </AppBar>
-
-          <Switch>
+        <Router>
+          <Routes>
+         <Switch>
             <Route exact path="/">
               <Home />
             </Route>
@@ -165,10 +166,13 @@ function App() {
             <Route path="/transaction/edit/:id">
               <EditData />
             </Route>
+          
             <Route path="**">
               <NotFound />
             </Route>
           </Switch>
+         </Routes>
+       </Router>
         </div>
       </Paper>
     </ThemeProvider>
