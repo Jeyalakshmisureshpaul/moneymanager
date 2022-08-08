@@ -148,9 +148,7 @@ function App() {
             <Route path="/weekly/:id">
               <Weekly color={color} />
             </Route>
-            <Route path="/monthly">
-              <Monthly color={color} />
-            </Route>
+            
             <Route path="/monthly/:id">
               <Monthly color={color} />
             </Route>
