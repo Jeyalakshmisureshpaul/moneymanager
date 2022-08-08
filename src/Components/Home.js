@@ -24,9 +24,9 @@ import { styled } from "@mui/material/styles";
 import CloseIcon from "@mui/icons-material/Close";
 import { useHistory } from "react-router-dom";
 import { API } from "../global";
-import dashboard from "./img/dashboard-page.PNG";
-import edit from "./img/edit-page.PNG";
-import hist from "./img/history-page.PNG";
+//import dashboard from "./img/dashboard-page.PNG";
+//import edit from "./img/edit-page.PNG";
+//import hist from "./img/history-page.PNG";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -121,7 +121,7 @@ export function Home() {
     history.push("/yearly");
   };
 
-  const home = [
+  /* const home = [
     {
       desc: "Get details of your monthly ,weekly and yearly details of income and expenditure alongside with the details of money spent on different categories like medical,food,fuel,movie,loan,etc and divisions like office and personal.",
       img: dashboard,
@@ -134,7 +134,7 @@ export function Home() {
       desc: "Here you can edit your income and expense on your weekly data",
       img: edit,
     },
-  ];
+  ];   */
 
   return (
     <div className="home-page">
@@ -235,9 +235,9 @@ export function Home() {
           </DialogContent>
           <DialogActions>
             {formData.income !== "" &&
-            formData.type !== "" &&
-            formData.desc !== "" &&
-            formData.expense !== "" ? (
+              formData.type !== "" &&
+              formData.desc !== "" &&
+              formData.expense !== "" ? (
               <Button
                 sx={{ mb: 2 }}
                 variant="contained"
@@ -254,11 +254,12 @@ export function Home() {
           </DialogActions>
         </BootstrapDialog>
       </Box>
-      <div className="description">
+          
+          {/* <div className="description">
         {home.map((data) => (
           <Description data={data} />
         ))}
-      </div>
+      </div>  */}
     </div>
   );
 }

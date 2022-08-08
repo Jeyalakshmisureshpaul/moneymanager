@@ -27,11 +27,12 @@ import { Box } from "@mui/system";
 import { API } from "../global";
 
 export function Weekly({ color }) {
+  
   const [data, setData] = useState([]);
   const history = useHistory();
   useEffect(() => {
     const loadData = async () => {
-      var response = await axios.get(`${API}/transaction`);
+      var response = await axios.get(`${API}/transaction `);
       setData(response.data);
     };
     loadData();
@@ -65,6 +66,7 @@ export function Weekly({ color }) {
 
   return (
     <>
+    
       <Dashboard color={color} />
       <Container>
         <Typography
