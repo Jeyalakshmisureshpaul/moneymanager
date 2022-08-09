@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Dashboard } from "./Dashboard";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory,useParams } from "react-router-dom";
 import {
   Container,
   FormControl,
@@ -27,16 +27,16 @@ import { Box } from "@mui/system";
 import { API } from "../global";
 
 export function Weekly({ color }) {
-  
+  const { id } = useParams();
   const [data, setData] = useState([]);
   const history = useHistory();
   useEffect(() => {
     const loadData = async () => {
-      var response = await axios.get(`${API}/transaction `);
+      var response = await axios.get(`${API}/transaction/${id} `);
       setData(response.data);
     };
     loadData();
-  }, []);
+  }, [id]);
   //table
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
